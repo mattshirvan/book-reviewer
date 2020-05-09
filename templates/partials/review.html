@@ -1,0 +1,12 @@
+{% if reviews %}
+    {% for review in reviews %}
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{review.user}}</h5>
+            <p class="card-text">{{review.review}}</p>
+            <p class="card-text">{{review.rating}}</p>        
+          </div>
+        </div>
+    {% endfor %}
+{% else %}
+{% endif %}

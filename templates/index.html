@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+{% block title %} Home {% endblock %}
+{% block main %} 
+<div class="card bg-light mb-3" style="max-width: 18rem;">
+  <div class="card-header">Books</div>
+  <div class="card-body">
+    <h5 class="card-title">Search Books</h5>
+    <p class="card-text">Search for a book, you can search by ISBN, Title or Author, make sure to fully clear the search bar.</p>
+  </div>
+</div>
+    <form action="{{ url_for('search') }}" method="GET" id="search_form">
+      <div class="form-group">        
+        <input type="text" class="form-control" name="book" id="books" placeholder="Search for a book">      
+      </div> 
+      <div class="form-group">
+        <select class="form-control" name="search">
+          <option disabled selected value="">Search By</option>
+          <option value="isbn">ISBN</option>
+          <option value="title">Title</option>
+          <option value="author">Author</option>
+        </select>
+      </div>                 
+    </form>
+    <hr>
+    <div id="search_result"></div>
+{% endblock %}

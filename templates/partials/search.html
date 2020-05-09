@@ -1,0 +1,10 @@
+<!-- Search result -->
+<ul>
+    {% if books %} 
+        {% for book in books %}
+            <li><a href="{{ url_for('books', book_id=book.id) }}">{{book.isbn}} {{book.title}} {{book.author}}</a></li>
+        {% endfor %}
+    {% else %}
+        <p>There were no results that matched your search, please try again.</p>    
+    {% endif %}
+</ul>
